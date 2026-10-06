@@ -1,0 +1,19 @@
+{
+  "name": "autoloop",
+  "version": "0.1.1",
+  "description": "A light build loop for new projects. Start turns an idea into a brief. Round runs one round at a time: pick one piece, build it, run it for real, show it, keep or drop it. Made for small projects and products with their own AI agent. Invoke a skill as /autoloop:<name>.",
+  "author": {
+    "name": "Anh Trinh",
+    "url": "https://github.com/anhtrinh919"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/anhtrinh919/autoloop",
+  "repository": "https://github.com/anhtrinh919/autoloop.git",
+  "keywords": [
+    "claude-code",
+    "workflow",
+    "loop",
+    "agent"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "autoloop",
+  "description": "A light build loop for new projects, two skills.",
+  "owner": {
+    "name": "Anh Trinh",
+    "url": "https://github.com/anhtrinh919"
+  },
+  "plugins": [
+    {
+      "name": "autoloop",
+      "description": "Start → brief.md and log.md. Round → one round at a time: pick, build, check for real, show, record. Invoked as /autoloop:<name>.",
+      "source": "./",
+      "category": "workflow"
+    }
+  ]
+}

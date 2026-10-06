@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Auto-bumps the Claude plugin manifest when a commit touches another file.
+set -euo pipefail
+
+PLUGIN_JSON=".claude-plugin/plugin.json"
+
+other_staged=$(git diff --cached --name-only | grep -vE '^\.claude-plugin/plugin\.json$' || true)
+[ -z "$other_staged" ] && exit 0
+
+version=$(python3 -c 'import json; print(json.load(open(".claude-plugin/plugin.json"))["version"])')
+IFS='.' read -r major minor patch <<< "$version"
+new_version="${major}.${minor}.$((patch + 1))"
+
+python3 - "$PLUGIN_JSON" "$new_version" <<'PY'
+import json, sys
+path, new_version = sys.argv[1], sys.argv[2]
+data = json.load(open(path))
+data["version"] = new_version
+with open(path, "w") as f:
+    json.dump(data, f, indent=2)
+    f.write("\n")
+PY
+git add "$PLUGIN_JSON"
+echo "Bumped Claude plugin version: ${version} -> ${new_version}"
