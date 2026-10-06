@@ -35,9 +35,11 @@ Otherwise check it out, and find the round whose Branch names it:
 
 ## Step 1 — Pick
 
-Read `brief.md` and `log.md`. Take the user's request, or propose one item from Next.
+Read `brief.md` and `log.md`. A user who named the round has picked it.
 
-Choose the order by what the round needs. Pick what most reduces doubt, or what the user wants to see.
+Otherwise, show the Next list with your recommended pick. Wait for the user's choice before planning.
+
+Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
 Enter plan mode. Write a short plan:
 
@@ -53,7 +55,7 @@ Exit plan mode. This is the round's approval.
 
 Create the branch, per `../../loop.md`'s Git section. Move the item from Next into Rounds, with status `building`. Commit.
 
-Gate: the user approved the plan. The round is in `log.md`, and gone from Next.
+Gate: the user picked the round and approved the plan. The round is in `log.md`, and gone from Next.
 
 ## Step 2 — Build
 
