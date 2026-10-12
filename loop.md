@@ -66,6 +66,13 @@ Two docs, both living. They always state the product as it is today.
 
 Follow `../../templates/brief.md` and `../../templates/log.md`. Git history holds the rest.
 
+Next has two parts:
+
+- Features — each one is its own round. Split a big one when it is picked.
+- Fixes — small items. One round can take several.
+
+Before adding an item, look for the same item in Next. Found one? Add the new note to it.
+
 Add any item to Next without asking. A round's Show step lists every item it added.
 
 Resolve every `../../` path from the skill's `SKILL.md`, against `${CLAUDE_PLUGIN_ROOT}`.

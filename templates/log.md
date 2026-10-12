@@ -4,6 +4,12 @@
 
 ## Next
 
+### Features
+
+- <item> — <user or found>, <date>
+
+### Fixes
+
 - <item> — <user or found>, <date>
 
 ## Rounds

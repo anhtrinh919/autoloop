@@ -59,7 +59,7 @@ Ask one question: does this match what you mean? Revise until the user says yes.
 Only then write the files:
 
 - `brief.md`, as approved.
-- `log.md` from `../../templates/log.md`. Fill Next with candidate rounds, in no fixed order.
+- `log.md` from `../../templates/log.md`. Fill Next's Features with candidate rounds, in no fixed order.
 - This line in the project's `CLAUDE.md`, creating the file when missing:
 
 > This project runs on autoloop. Use `autoloop:round` to continue, never autobuild.

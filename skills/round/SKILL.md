@@ -39,12 +39,27 @@ Read `brief.md` and `log.md`. A user who named the round has picked it.
 
 Otherwise, show the Next list with your recommended pick. Wait for the user's choice before planning.
 
+A pick is one of:
+
+- One feature. Fold in the fixes that touch the same area. Name each one.
+- A fix round: 3 to 8 fixes from one area. The goal names the area.
+
+Next lacks the Features and Fixes parts? Sort every item into one, then offer a tidy.
+
+Fixes past about 20 items? Offer a tidy before the pick:
+
+- Merge repeats.
+- Find items that later rounds already fixed.
+- Show both lists. Ask which items to drop. Drop nothing without the user's yes.
+
+Commit the tidy on the base branch, before the round's branch exists.
+
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
 Enter plan mode. Write a short plan:
 
 - Goal — one sentence the user can name.
-- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios.
+- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Cover each fix the round takes.
 - Pieces — each file to create or change, and its one job.
 - Code or agent — the kind of each piece. A coded choice an agent could make needs a new Hard rule.
 - Scenarios — new or changed scenarios for each agent ability the round touches.
@@ -53,9 +68,9 @@ Enter plan mode. Write a short plan:
 
 Exit plan mode. This is the round's approval.
 
-Create the branch, per `../../loop.md`'s Git section. Move the item from Next into Rounds, with status `building`. Commit.
+Create the branch, per `../../loop.md`'s Git section. Move every picked item from Next into Rounds, with status `building`. Commit.
 
-Gate: the user picked the round and approved the plan. The round is in `log.md`, and gone from Next.
+Gate: the user picked the round and approved the plan. The round is in `log.md`. Its items are gone from Next.
 
 ## Step 2 — Build
 
@@ -114,7 +129,7 @@ Show the user the Try. Use screenshots, the command and its output, or each scen
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
 - Adjust — set status `building`, and return to Step 2 with their notes.
-- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. The item stays in Next, unless the user drops the idea too. Commit, then delete the round branch per `../../loop.md`'s Git section.
+- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its items go back to Next, unless the user drops them too. Commit, then delete the round branch per `../../loop.md`'s Git section.
 - Keep — move to Step 5.
 
 Gate: the user chose keep or drop.
