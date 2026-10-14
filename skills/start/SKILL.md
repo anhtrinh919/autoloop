@@ -5,7 +5,7 @@ description: Starts a new autoloop project from an idea. Interviews the user and
 
 # Start
 
-New projects only. Writes `brief.md`, `log.md`, and one line in the project's `CLAUDE.md`.
+New projects only. Writes `brief.md`, `log.md`, `bug.md`, and one line in the project's `CLAUDE.md`.
 
 Read `../../loop.md` first. Resolve `../../` paths against `${CLAUDE_PLUGIN_ROOT}`.
 
@@ -59,12 +59,13 @@ Ask one question: does this match what you mean? Revise until the user says yes.
 Only then write the files:
 
 - `brief.md`, as approved.
-- `log.md` from `../../templates/log.md`. Fill Next's Features with candidate rounds, in no fixed order.
+- `log.md` from `../../templates/log.md`. Fill Next with candidate rounds, in no fixed order.
+- `bug.md` from `../../templates/bug.md`, with no items.
 - This line in the project's `CLAUDE.md`, creating the file when missing:
 
 > This project runs on autoloop. Use `autoloop:round` to continue, never autobuild.
 
-Run `git init` when the folder has no repository. Commit the three files.
+Run `git init` when the folder has no repository. Commit the four files.
 
 Gate: the user said yes to `brief.md`. The working tree is clean.
 

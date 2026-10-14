@@ -59,21 +59,30 @@ A live agent run uses the real model. A mocked or scripted model never counts. A
 
 ## Docs
 
-Two docs, both living. They always state the product as it is today.
+Three docs, all living. They always state the product as it is today.
 
 - `brief.md` — what the product is, its hard rules, its agent abilities, and settled choices.
-- `log.md` — the Next list and every round, newest first.
+- `log.md` — the Next list of features, and every round, newest first.
+- `bug.md` — open bugs and small changes.
 
-Follow `../../templates/brief.md` and `../../templates/log.md`. Git history holds the rest.
+Follow `../../templates/brief.md`, `../../templates/log.md`, and `../../templates/bug.md`. Git history holds the rest.
 
-Next has two parts:
+Each Next item is a feature, and its own round. Split a big one when it is picked.
 
-- Features — each one is its own round. Split a big one when it is picked.
-- Fixes — small items. One round can take several.
+Each `bug.md` item names where it goes:
 
-Before adding an item, look for the same item in Next. Found one? Add the new note to it.
+- Fold into a feature — the Next feature that touches the same area. That round takes it.
+- Bug round — no feature fits. It waits for a round of bugs only.
 
-Add any item to Next without asking. A round's Show step lists every item it added.
+No `bug.md` when you read the docs or add a bug? Create it from the template first. Move every bug or small change out of Next into it. Give each one its target.
+
+Adding a feature to Next? Check every Bug round item. Point any that fit to the new feature.
+
+A feature leaves Next without its round? Point its bugs to another feature, or to Bug round.
+
+Before adding an item, look for it in Next and `bug.md`. Found it? Add the new note to it.
+
+Add any item to Next or `bug.md` without asking. A round's Show step lists every item it added.
 
 Resolve every `../../` path from the skill's `SKILL.md`, against `${CLAUDE_PLUGIN_ROOT}`.
 

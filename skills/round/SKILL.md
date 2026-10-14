@@ -5,7 +5,7 @@ description: Runs the next round of an autoloop project. Picks one piece, builds
 
 # Round
 
-Runs one round. Reads and rewrites `brief.md` and `log.md`. Writes the round's code and tests.
+Runs one round. Reads and rewrites `brief.md`, `log.md`, and `bug.md`. Writes the round's code and tests.
 
 Read `../../loop.md` first. Resolve `../../` paths against `${CLAUDE_PLUGIN_ROOT}`.
 
@@ -35,31 +35,30 @@ Otherwise check it out, and find the round whose Branch names it:
 
 ## Step 1 — Pick
 
-Read `brief.md` and `log.md`. A user who named the round has picked it.
+Read `brief.md`, `log.md`, and `bug.md`. A user who named the round has picked it.
 
-Otherwise, show the Next list with your recommended pick. Wait for the user's choice before planning.
+Otherwise, show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
 
 A pick is one of:
 
-- One feature. Fold in the fixes that touch the same area. Name each one.
-- A fix round: 3 to 8 fixes from one area. The goal names the area.
+- One feature. It takes every bug that folds into it. Name each one.
+- A bug round: 3 to 8 Bug round items from one area. The goal names the area.
 
-Next lacks the Features and Fixes parts? Sort every item into one, then offer a tidy.
-
-Fixes past about 20 items? Offer a tidy before the pick:
+`bug.md` past about 20 items? Offer a tidy before the pick:
 
 - Merge repeats.
-- Find items that later rounds already fixed.
-- Show both lists. Ask which items to drop. Drop nothing without the user's yes.
+- Find bugs that later rounds already fixed.
+- Check each target still names a feature in Next.
+- Show both lists. Ask which bugs to drop. Drop nothing without the user's yes.
 
-Commit the tidy on the base branch, before the round's branch exists.
+Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
 Enter plan mode. Write a short plan:
 
 - Goal — one sentence the user can name.
-- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Cover each fix the round takes.
+- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Cover each bug the round takes.
 - Pieces — each file to create or change, and its one job.
 - Code or agent — the kind of each piece. A coded choice an agent could make needs a new Hard rule.
 - Scenarios — new or changed scenarios for each agent ability the round touches.
@@ -68,9 +67,9 @@ Enter plan mode. Write a short plan:
 
 Exit plan mode. This is the round's approval.
 
-Create the branch, per `../../loop.md`'s Git section. Move every picked item from Next into Rounds, with status `building`. Commit.
+Create the branch, per `../../loop.md`'s Git section. Add the round to Rounds, with status `building`. Remove its feature from Next. Move its bugs from `bug.md` to its Bugs line. Commit.
 
-Gate: the user picked the round and approved the plan. The round is in `log.md`. Its items are gone from Next.
+Gate: the user picked the round and approved the plan. The round is in `log.md`. Its items are gone from Next and `bug.md`.
 
 ## Step 2 — Build
 
@@ -90,7 +89,7 @@ Agent pieces are built from instructions and tools:
 
 Commit in small working steps.
 
-When the round grows past its plan, stop. Finish what works, and move the rest to Next.
+When the round grows past its plan, stop. Finish what works. Move the rest to Next or `bug.md`.
 
 Gate: every logic piece in Pieces has a test, and all pass. Every agent piece is instructions and tools. Each tool does one action.
 
@@ -114,7 +113,7 @@ Scale the blind checks to the round:
 - An agent ability ran — spawn a blind judge. Give it only the ability's Goal, each scenario's good result, and the agent's real output. It grades each scenario pass or fail, with one reason.
 - Risk is not none — spawn one blind reviewer. Give it the branch diff and `brief.md`'s Hard rules. It checks every Hard rule still holds.
 
-Fix every failure inside the round's goal. Move findings outside it to Next.
+Fix every failure inside the round's goal. Move findings outside it to Next or `bug.md`.
 
 Rerun only what each fix touches. Never loop the agent to polish one answer.
 
@@ -124,12 +123,12 @@ Gate: zero tests fail. The real run reached the round's goal. Zero findings insi
 
 Set status `showing`.
 
-Show the user the Try. Use screenshots, the command and its output, or each scenario's grade and real output. List every item this round added to Next.
+Show the user the Try. Use screenshots, the command and its output, or each scenario's grade and real output. List every item this round added to Next or `bug.md`.
 
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
 - Adjust — set status `building`, and return to Step 2 with their notes.
-- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its items go back to Next, unless the user drops them too. Commit, then delete the round branch per `../../loop.md`'s Git section.
+- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its feature goes back to Next, and its bugs to `bug.md`, unless the user drops them too. Commit, then delete the round branch per `../../loop.md`'s Git section.
 - Keep — move to Step 5.
 
 Gate: the user chose keep or drop.
