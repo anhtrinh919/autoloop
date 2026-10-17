@@ -69,6 +69,11 @@ Follow `../../templates/brief.md`, `../../templates/log.md`, and `../../template
 
 Each Next item is a feature, and its own round. Split a big one when it is picked.
 
+Write each Next item as two sentences:
+
+- First — what it is, in 4 to 6 words.
+- Second — a description or note. It can run longer.
+
 Each `bug.md` item names where it goes:
 
 - Fold into a feature — the Next feature that touches the same area. That round takes it.

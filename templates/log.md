@@ -4,7 +4,7 @@
 
 ## Next
 
-- <feature> — <user or found>, <date>
+- <What it is, in 4 to 6 words>. <Description or note.> — <user or found>, <date>
 
 ## Rounds
 
