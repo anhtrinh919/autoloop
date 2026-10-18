@@ -121,14 +121,18 @@ Gate: zero tests fail. The real run reached the round's goal. Zero findings insi
 
 ## Step 4 — Show
 
-Set status `showing`.
+Write the round's Built line: 3 to 5 short points of what the user can see.
+
+Rewrite its Try line as the user's own steps. Split the points in both with `;`.
+
+Set status `showing`, in the same commit.
 
 Show the user the Try. Use screenshots, the command and its output, or each scenario's grade and real output. List every item this round added to Next or `bug.md`.
 
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
 - Adjust — set status `building`, and return to Step 2 with their notes.
-- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its feature goes back to Next, and its bugs to `bug.md`, unless the user drops them too. Commit, then delete the round branch per `../../loop.md`'s Git section.
+- Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its feature goes back to Next, and its bugs to `bug.md`, unless the user drops them too. So does each feature the user asked for during the round. Commit, then delete the round branch per `../../loop.md`'s Git section.
 - Keep — move to Step 5.
 
 Gate: the user chose keep or drop.
