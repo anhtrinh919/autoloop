@@ -58,7 +58,7 @@ Recommend by what the round needs. Pick what most reduces doubt, or what the use
 Enter plan mode. Write a short plan:
 
 - Goal — one sentence the user can name.
-- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Cover each bug the round takes.
+- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Use the user's own screen sizes. Cover each bug the round takes.
 - Pieces — each file to create or change, and its one job.
 - Code or agent — the kind of each piece. A coded choice an agent could make needs a new Hard rule.
 - Scenarios — new or changed scenarios for each agent ability the round touches.
@@ -101,11 +101,18 @@ Run the full test suite, fresh. Read the exit code.
 
 Make the real run the plan's Try names:
 
-- Screens — walk them with `/browse`, at the sizes the Try names.
+- Screens — walk them with `/browse`, or a real terminal for a terminal app, at the sizes the Try names.
 - A command or interface — run it on real input, and read the output.
 - An agent ability the round touched — run each of its scenarios live, once, whatever the Try.
 
 Sample data never counts as proof of the round's goal.
+
+Look at every screen yourself, in screenshots:
+
+- Take them as the user sees them: the user's own window size, theme, and real data.
+- Open each screenshot. Screen text or a passing check never counts as a look.
+- Judge it as the user. Note what the eye meets first, and what is empty, cut, or unclear.
+- Fix what fails that look, as any other failure.
 
 Scale the blind checks to the round:
 
@@ -117,7 +124,7 @@ Fix every failure inside the round's goal. Move findings outside it to Next or `
 
 Rerun only what each fix touches. Never loop the agent to polish one answer.
 
-Gate: zero tests fail. The real run reached the round's goal. Zero findings inside the goal remain open.
+Gate: zero tests fail. The real run reached the round's goal. You looked at every screen's screenshots. Zero findings inside the goal remain open.
 
 ## Step 4 — Show
 
@@ -127,7 +134,7 @@ Rewrite its Try line as the user's own steps. Split the points in both with `;`.
 
 Set status `showing`, in the same commit.
 
-Show the user the Try. Use screenshots, the command and its output, or each scenario's grade and real output. List every item this round added to Next or `bug.md`.
+Show the user the Try. Use screenshots for every screen, the command and its output, or each scenario's grade and real output. List every item this round added to Next or `bug.md`.
 
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
