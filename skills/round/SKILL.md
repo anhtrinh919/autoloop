@@ -138,7 +138,7 @@ Show the user the Try. Use screenshots for every screen, the command and its out
 
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
-- Adjust — set status `building`, and return to Step 2 with their notes.
+- Adjust — set status `building`, and return to Step 2 with their notes. Write the notes on the round's own `Adjust:` line, never into Try; Try stays the user's steps.
 - Drop — switch to the base branch. Add the round to its `log.md` as `dropped`, with the reason and Learned. Its feature goes back to Next, and its bugs to `bug.md`, unless the user drops them too. So does each feature the user asked for during the round. Commit, then delete the round branch per `../../loop.md`'s Git section.
 - Keep — move to Step 5.
 

@@ -13,6 +13,7 @@
 Status: building | checking | showing | kept | dropped
 Branch: round-<n>-<slug>, from <base branch>
 Try: <what the user tries at the end; at Show, the user's own steps, split by ;>
+Adjust: <only after an adjust: the user's notes, dated; never in Try>
 Built: <written at Show: 3 to 5 points the user can see, split by ;>
 Bugs: <each bug this round took from bug.md>, or none
 Risk: none | money | security | user data | migration
