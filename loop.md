@@ -122,7 +122,9 @@ A named agent may be missing, such as `crawler` or `dogfood`. Use a general-purp
 
 Each round runs on its own branch: `round-<n>-<slug>`.
 
-- Keep — merge it into its base branch.
+- Keep — merge it into its base branch, push, and deploy. Keep is the user's OK for all three.
 - Drop — require typed `drop`, then delete the branch.
 
-Never push, or add a remote, without the user's OK.
+Push and deploy follow `brief.md`'s How to ship. It is missing or empty? Ask the user once, then fill it.
+
+Never push outside a keep, or add a remote, without the user's OK.

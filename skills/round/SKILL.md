@@ -31,27 +31,31 @@ Otherwise check it out, and find the round whose Branch names it:
 - `building` — Step 2. Diff the branch to see what is done.
 - `checking` — Step 3.
 - `showing` — Step 4.
-- `kept` — Step 5's merge.
+- `kept` — Step 5's merge, push, and deploy.
 
 ## Step 1 — Pick
 
-Read `brief.md`, `log.md`, and `bug.md`. A user who named the round has picked it.
+Read `brief.md`, `log.md`, and `bug.md`.
 
-Otherwise, show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
+`bug.md` holds at most 9 items. At 10 or more, this round is a bug round. Offer no other pick. A round the user named runs after it.
 
-A pick is one of:
-
-- One feature. It takes every bug that folds into it. Name each one.
-- A bug round: 3 to 8 Bug round items from one area. The goal names the area.
-
-`bug.md` past about 20 items? Offer a tidy before the pick:
+For that bug round, tidy `bug.md` first:
 
 - Merge repeats.
 - Find bugs that later rounds already fixed.
 - Check each target still names a feature in Next.
 - Show both lists. Ask which bugs to drop. Drop nothing without the user's yes.
 
+Still 10 or more? Take the bugs with the highest impact times visibility. Impact is how much a bug hurts the user. Visibility is how often the user meets it. Take enough to leave 9 or fewer, from any area.
+
 Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.
+
+Otherwise, a user who named the round has picked it. Or show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
+
+A pick is one of:
+
+- One feature. It takes every bug that folds into it. Name each one.
+- A bug round: 3 to 8 Bug round items from one area. The goal names the area.
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
@@ -158,7 +162,13 @@ Set status `kept`, as the last edit. Commit once.
 
 Check out the base branch, merge the round branch, and stay on the base branch.
 
-Gate: `brief.md` matches the product as it runs. The round branch is merged. The working tree is clean.
+Push and deploy, per `../../loop.md`'s Git section. Open the live product, and see the round's change there.
+
+A push or deploy fails? Fix it, or tell the user. Never call a round shipped before it is live.
+
+Tell the user it shipped, with the live link. Name any part How to ship marks none.
+
+Gate: `brief.md` matches the product as it runs. The round branch is merged, then pushed and deployed per How to ship. The live product shows the change. The working tree is clean.
 
 ## Hand-off
 

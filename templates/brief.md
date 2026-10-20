@@ -41,3 +41,9 @@ Scenarios:
 ## How to run
 
 <The command that starts the product, and how to open it.>
+
+## How to ship
+
+Push: <remote and branch>, or none
+Deploy: <the command or service that puts it live>, or none
+Live: <the link or place to see it>, or none
