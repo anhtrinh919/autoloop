@@ -55,6 +55,10 @@ Commit a new `bug.md` and the tidy on the base branch, before the round's branch
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
+Ask every open question in chat first, per `../../loop.md`'s Asking section. Wait for the answers.
+
+The plan holds no questions. It states each answer as a settled choice. A question found while planning goes to chat, before the plan is shown.
+
 Enter plan mode. Write a short plan:
 
 - Goal — one sentence the user can name.
