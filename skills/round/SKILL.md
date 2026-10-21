@@ -19,6 +19,15 @@ Commit every status change. The working tree is clean before any branch switch.
 
 Mid-round, stop only for a destructive action, or a decision `../../loop.md` says to ask.
 
+Sort each bug found mid-round into the first case that fits:
+
+1. The round caused it — fix it now.
+2. It is small, in code the round touches — fix it now, with a test. Add it to the round's Bugs line.
+3. A Next feature touches its area — add it to `bug.md`, folded into that feature.
+4. Anything else — add it to `bug.md`, for a bug round.
+
+Small means one fix and one test. It adds no screen, and no choice for the user.
+
 ## Resume
 
 Look for an unmerged `round-*` branch. None means a new round, at Step 1.
@@ -128,11 +137,11 @@ Scale the blind checks to the round:
 - An agent ability ran — spawn a blind judge. Give it only the ability's Goal, each scenario's good result, and the agent's real output. It grades each scenario pass or fail, with one reason.
 - Risk is not none — spawn one blind reviewer. Give it the branch diff and `brief.md`'s Hard rules. It checks every Hard rule still holds.
 
-Fix every failure inside the round's goal. Move findings outside it to Next or `bug.md`.
+Fix every failure inside the round's goal. Sort every other bug per Rules. Move other findings to Next.
 
 Rerun only what each fix touches. Never loop the agent to polish one answer.
 
-Gate: zero tests fail. The real run reached the round's goal. You looked at every screen's screenshots. Zero findings inside the goal remain open.
+Gate: zero tests fail. The real run reached the round's goal. You looked at every screen's screenshots. Zero findings inside the goal remain open. Every bug Rules says to fix now is fixed.
 
 ## Step 4 — Show
 
@@ -142,7 +151,7 @@ Rewrite its Try line as the user's own steps. Split the points in both with `;`.
 
 Set status `showing`, in the same commit.
 
-Show the user the Try. Use screenshots for every screen, the command and its output, or each scenario's grade and real output. List every item this round added to Next or `bug.md`.
+Show the user the Try. Use screenshots for every screen, the command and its output, or each scenario's grade and real output. List every bug this round fixed off-plan, and every item it added to Next or `bug.md`.
 
 Tell the user how to try it themselves. Ask one question: keep, adjust, or drop?
 
