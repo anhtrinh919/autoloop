@@ -1,10 +1,10 @@
 # <Product name> — log
 
-15 words a sentence. Living doc. Next holds open features. Bugs live in `bug.md`. Rounds holds every round, newest first.
+15 words a sentence. Living doc. Next holds open features, in build order, numbered by the round each would be. Bugs live in `bug.md`. Rounds holds every round, newest first.
 
 ## Next
 
-- <What it is, in 4 to 6 words>. <Description or note.> — <user or found>, <date>
+- <n>. <What it is, in 4 to 6 words>. <Description or note.> — <user or found>, <date>
 
 ## Rounds
 

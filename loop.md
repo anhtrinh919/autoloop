@@ -62,7 +62,7 @@ A live agent run uses the real model. A mocked or scripted model never counts. A
 Three docs, all living. They always state the product as it is today.
 
 - `brief.md` — what the product is, its hard rules, its agent abilities, and settled choices.
-- `log.md` — the Next list of features, and every round, newest first.
+- `log.md` — the Next list of features in build order, and every round, newest first.
 - `bug.md` — open bugs and small changes.
 
 Follow `../../templates/brief.md`, `../../templates/log.md`, and `../../templates/bug.md`. Git history holds the rest.
@@ -74,16 +74,26 @@ Write each Next item as two sentences:
 - First — what it is, in 4 to 6 words.
 - Second — a description or note. It can run longer.
 
-Each `bug.md` item names where it goes:
+Next is the build order. Its top item is the next round.
 
-- Fold into a feature — the Next feature that touches the same area. That round takes it.
-- Bug round — no feature fits. It waits for a round of bugs only.
+Number each Next item with the round it would be. That is the newest round's number, plus its place. Example: `- 38. The Windows app window. …`
 
-No `bug.md` when you read the docs or add a bug? Create it from the template first. Move every bug or small change out of Next into it. Give each one its target.
+Keep the numbers true after every change to Next or Rounds. Next items have no numbers? Add them.
 
-Adding a feature to Next? Check every Bug round item. Point any that fit to the new feature.
+The user names an item by its number. Read that number in `log.md`.
 
-A feature leaves Next without its round? Point its bugs to another feature, or to Bug round.
+The user settles the order in chat? Rewrite Next and its numbers at once. Commit.
+
+`bug.md` has two sections:
+
+- Folded — bugs grouped under a feature in Next's top 5. That feature's round takes them.
+- Loose — bugs with no such feature. They wait for a bug round.
+
+Fold a bug when a top-5 feature touches its area. Otherwise it is loose.
+
+Next's top 5 changes? Move the bugs of a feature that left it to Loose. Fold any Loose bug that fits a feature that joined it.
+
+No `bug.md`, or no two sections? Create it from the template first. Move every bug or small change out of Next into it. Sort each one into Folded or Loose.
 
 Before adding an item, look for it in Next and `bug.md`. Found it? Add the new note to it.
 

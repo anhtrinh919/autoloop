@@ -23,8 +23,8 @@ Sort each bug found mid-round into the first case that fits:
 
 1. The round caused it — fix it now.
 2. It is small, in code the round touches — fix it now, with a test. Add it to the round's Bugs line.
-3. A Next feature touches its area — add it to `bug.md`, folded into that feature.
-4. Anything else — add it to `bug.md`, for a bug round.
+3. A feature in Next's top 5 touches its area — add it to `bug.md`'s Folded, under that feature.
+4. Anything else — add it to `bug.md`'s Loose.
 
 Small means one fix and one test. It adds no screen, and no choice for the user.
 
@@ -46,13 +46,13 @@ Otherwise check it out, and find the round whose Branch names it:
 
 Read `brief.md`, `log.md`, and `bug.md`.
 
-`bug.md` holds at most 9 items. At 10 or more, this round is a bug round. Offer no other pick. A round the user named runs after it.
+`bug.md`'s Loose holds at most 5 bugs. At 6 or more, this round is a bug round. Offer no other pick. A round the user named runs after it.
 
 For that bug round, tidy `bug.md` first:
 
 - Merge repeats.
 - Find bugs that later rounds already fixed.
-- Check each target still names a feature in Next.
+- Check each Folded feature is still in Next's top 5.
 - Show both lists. Ask which bugs to drop. Drop nothing without the user's yes.
 
 Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.
@@ -61,10 +61,10 @@ Otherwise, a user who named the round has picked it. Or show Next and `bug.md` w
 
 A pick is one of:
 
-- One feature. It takes every bug that folds into it. Name each one.
-- A bug round: every item in `bug.md`, whatever its target. Its goal is an empty `bug.md`.
+- One feature. It takes its Folded bugs. Name each one.
+- A bug round: every Loose bug. Its goal is an empty Loose.
 
-A bug round fixes bugs by impact times visibility, highest first. Impact is how much a bug hurts the user. Visibility is how often the user meets it. A bug it cannot fix goes back to `bug.md`, with the reason.
+A bug round fixes bugs by impact times visibility, highest first. Impact is how much a bug hurts the user. Visibility is how often the user meets it. A bug it cannot fix goes back to Loose, with the reason.
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
@@ -84,7 +84,7 @@ Enter plan mode. Write a short plan:
 
 Exit plan mode. This is the round's approval.
 
-Create the branch, per `../../loop.md`'s Git section. Add the round to Rounds, with status `building`. Remove its feature from Next. Move its bugs from `bug.md` to its Bugs line. Commit.
+Create the branch, per `../../loop.md`'s Git section. Add the round to Rounds, with status `building`. Remove its feature from Next, and renumber Next. Move its bugs from `bug.md` to its Bugs line. Commit.
 
 Gate: the user picked the round and approved the plan. The round is in `log.md`. Its items are gone from Next and `bug.md`.
 
