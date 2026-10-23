@@ -55,8 +55,6 @@ For that bug round, tidy `bug.md` first:
 - Check each target still names a feature in Next.
 - Show both lists. Ask which bugs to drop. Drop nothing without the user's yes.
 
-Still 10 or more? Take the bugs with the highest impact times visibility. Impact is how much a bug hurts the user. Visibility is how often the user meets it. Take enough to leave 9 or fewer, from any area.
-
 Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.
 
 Otherwise, a user who named the round has picked it. Or show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
@@ -64,7 +62,9 @@ Otherwise, a user who named the round has picked it. Or show Next and `bug.md` w
 A pick is one of:
 
 - One feature. It takes every bug that folds into it. Name each one.
-- A bug round: 3 to 8 Bug round items from one area. The goal names the area.
+- A bug round: every item in `bug.md`, whatever its target. Its goal is an empty `bug.md`.
+
+A bug round fixes bugs by impact times visibility, highest first. Impact is how much a bug hurts the user. Visibility is how often the user meets it. A bug it cannot fix goes back to `bug.md`, with the reason.
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
