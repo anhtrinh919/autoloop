@@ -79,15 +79,7 @@ Ask every open question in chat first, per `../../loop.md`'s Asking section. Wai
 
 The plan holds no questions. It states each answer as a settled choice. A question found while planning goes to chat, before the plan is shown.
 
-Enter plan mode. Write a short plan:
-
-- Goal — one sentence the user can name.
-- Try — what the user tries at the end, and on what: which screens and sizes, which command, which scenarios. Use the user's own screen sizes. Cover each bug the round takes.
-- Pieces — each file to create or change, and its one job.
-- Code or agent — the kind of each piece. A coded choice an agent could make needs a new Hard rule.
-- Scenarios — new or changed scenarios for each agent ability the round touches.
-- Checks — the tests to write, and the real run that proves it works.
-- Risk — none, or money, security, user data, or migration.
+Enter plan mode. Write a short plan.
 
 Exit plan mode. This is the round's approval.
 
@@ -108,14 +100,14 @@ Screens are proven by walking them, in Step 3. Mark any sample data as sample da
 Agent pieces are built from instructions and tools:
 
 - Write or change the instructions file, and the tools it needs.
-- Write the plan's scenarios into `brief.md`. Scenarios change only through a plan or the user's notes.
+- Write the round's new or changed scenarios into `brief.md`. Scenarios change only through a plan or the user's notes.
 - Never code the steps the agent should choose.
 
 Commit in small working steps.
 
 When the round grows past its plan, stop. Finish what works. Move the rest to Next or `bug.md`.
 
-Gate: every logic piece in Pieces has a test, and all pass. Every agent piece is instructions and tools. Each tool does one action.
+Gate: every piece with logic has a test, and all pass. Every agent piece is instructions and tools. Each tool does one action.
 
 ## Step 3 — Check
 
@@ -123,7 +115,7 @@ Set status `checking`.
 
 Run the full test suite, fresh. Read the exit code.
 
-Make the real run the plan's Try names:
+Make the real run the round's Try names:
 
 - Screens — walk them with `/browse`, or a real terminal for a terminal app, at the sizes the Try names.
 - A command or interface — run it on real input, and read the output.
