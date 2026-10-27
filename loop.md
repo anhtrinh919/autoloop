@@ -119,7 +119,7 @@ End with one line: reply `ok` to accept every recommendation, or answer by numbe
 
 ## Subagents
 
-The main session builds. Spawn a subagent only for parallel work, research, or a blind check.
+Set the model on every spawn:
 
 - Research and blind checks: Sonnet.
 - A blind check on a round whose Risk is not none: Opus.
