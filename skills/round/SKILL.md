@@ -75,6 +75,8 @@ A bug round fixes bugs by impact times visibility, highest first. Impact is how 
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
+Once the round is picked, restate it in chat. Name its idea, its goals, and what it builds.
+
 Ask every open question in chat first, per `../../loop.md`'s Asking section. Wait for the answers.
 
 The plan holds no questions. It states each answer as a settled choice. A question found while planning goes to chat, before the plan is shown.
