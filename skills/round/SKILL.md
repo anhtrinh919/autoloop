@@ -13,7 +13,12 @@ Read `../../loop.md` first. Resolve `../../` paths against `${CLAUDE_PLUGIN_ROOT
 
 No autoloop line in the project's `CLAUDE.md` means this is not an autoloop project. Stop and say so.
 
-A bug or a small change is a small round. It still runs every step.
+A small fix the user asks for is not a round. Just do it:
+
+- Fix it, with a test, on the current branch. Commit.
+- Show the user the fix. Ship only on their OK, per `../../loop.md`'s Git section.
+
+A bigger fix or change is a round. It runs every step.
 
 Commit every status change. The working tree is clean before any branch switch.
 
@@ -25,6 +30,8 @@ Sort each bug found mid-round into the first case that fits:
 2. It is small, in code the round touches — fix it now, with a test. Add it to the round's Bugs line.
 3. A feature in Next's top 5 touches its area — add it to `bug.md`'s Folded, under that feature.
 4. Anything else — add it to `bug.md`'s Loose.
+
+In a bug round, case 4 changes. Fix that bug now, with a test. Add it to the Bugs line.
 
 Small means one fix and one test. It adds no screen, and no choice for the user.
 
