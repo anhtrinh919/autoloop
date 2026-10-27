@@ -16,6 +16,24 @@ Things that must be exact, or must never happen. Each one is code, with a test.
 
 - <rule> — <why it matters>
 
+## Building blocks
+
+The blocks the product is built from, and how they connect. Only what runs today.
+
+- A block runs or stores on its own: an app, a server, a data store, an agent, an outside service.
+- Screens, files, and functions inside one block are not blocks.
+- An arrow is a connection. Label it with what moves along it.
+- Use the user's words for every label.
+- At most 12 blocks. Past that, group blocks into one.
+- No block built yet? Write "None yet."
+
+```mermaid
+flowchart LR
+  app[<block>] -- <what moves> --> server[<block>]
+```
+
+- <block> — <its one job>
+
 ## Agent abilities
 
 Only when the product has its own AI agent. Delete this section otherwise.

@@ -75,7 +75,7 @@ A bug round fixes bugs by impact times visibility, highest first. Impact is how 
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
-Once the round is picked, restate it in chat. Name its idea, its goals, and what it builds.
+Once the round is picked, restate it in chat. Name its idea, its goals, and what it builds. Name the blocks and connections it adds or changes, per `brief.md`'s Building blocks.
 
 Ask every open question in chat first, per `../../loop.md`'s Asking section. Wait for the answers.
 
@@ -168,6 +168,13 @@ Write the round's Result and Learned.
 
 Rewrite `brief.md` where the round changed the product.
 
+Update Building blocks when the round changed a block or a connection:
+
+- A block was added, removed, split, merged, or renamed.
+- A connection appeared, went away, or changed what moves along it.
+
+A change inside one block leaves the diagram alone. Check each block and arrow against the code. No Building blocks section? Write it from the code, per `../../templates/brief.md`.
+
 Set status `kept`, as the last edit. Commit once.
 
 Check out the base branch, merge the round branch, and stay on the base branch.
@@ -176,9 +183,9 @@ Push and deploy, per `../../loop.md`'s Git section. Open the live product, and s
 
 A push or deploy fails? Fix it, or tell the user. Never call a round shipped before it is live.
 
-Tell the user it shipped, with the live link. Name any part How to ship marks none.
+Tell the user it shipped, with the live link. Name any part How to ship marks none. Building blocks changed? Show the new diagram.
 
-Gate: `brief.md` matches the product as it runs. The round branch is merged, then pushed and deployed per How to ship. The live product shows the change. The working tree is clean.
+Gate: `brief.md` matches the product as it runs, Building blocks included. The round branch is merged, then pushed and deployed per How to ship. The live product shows the change. The working tree is clean.
 
 ## Hand-off
 
