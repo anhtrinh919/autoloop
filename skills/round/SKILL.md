@@ -24,14 +24,12 @@ Commit every status change. The working tree is clean before any branch switch.
 
 Mid-round, stop only for a destructive action, or a decision `../../loop.md` says to ask.
 
-Sort each bug found mid-round into the first case that fits:
+Every round aims for zero new Loose bugs. Sort each bug found mid-round into the first case that fits:
 
 1. The round caused it — fix it now.
 2. It is small, in code the round touches — fix it now, with a test. Add it to the round's Bugs line.
-3. A feature in Next's top 5 touches its area — add it to `bug.md`'s Folded, under that feature.
-4. Anything else — add it to `bug.md`'s Loose.
-
-In a bug round, case 4 changes. Fix that bug now, with a test. Add it to the Bugs line.
+3. A feature in Next's top 10 touches its area — add it to `bug.md`'s Folded, under that feature.
+4. Anything else — fix it now, with a test. Add it to the Bugs line. The round cannot fix it? Add it to `bug.md`'s Loose, with the reason.
 
 Small means one fix and one test. It adds no screen, and no choice for the user.
 
@@ -59,7 +57,7 @@ For that bug round, tidy `bug.md` first:
 
 - Merge repeats.
 - Find bugs that later rounds already fixed.
-- Check each Folded feature is still in Next's top 5.
+- Check each Folded feature is still in Next's top 10.
 - Show both lists. Ask which bugs to drop. Drop nothing without the user's yes.
 
 Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.

@@ -86,12 +86,12 @@ The user settles the order in chat? Rewrite Next and its numbers at once. Commit
 
 `bug.md` has two sections:
 
-- Folded — bugs grouped under a feature in Next's top 5. That feature's round takes them.
+- Folded — bugs grouped under a feature in Next's top 10. That feature's round takes them.
 - Loose — bugs with no such feature. They wait for a bug round.
 
-Fold a bug when a top-5 feature touches its area. Otherwise it is loose.
+Fold a bug when a top-10 feature touches its area. Otherwise it is loose.
 
-Next's top 5 changes? Move the bugs of a feature that left it to Loose. Fold any Loose bug that fits a feature that joined it.
+Next's top 10 changes? Move the bugs of a feature that left it to Loose. Fold any Loose bug that fits a feature that joined it.
 
 No `bug.md`, or no two sections? Create it from the template first. Move every bug or small change out of Next into it. Sort each one into Folded or Loose.
 
