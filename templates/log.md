@@ -10,7 +10,7 @@
 
 ### Round <n> — <goal>
 
-Status: building | checking | showing | kept | dropped
+Status: picking | building | checking | showing | kept | dropped
 Branch: round-<n>-<slug>, from <base branch>
 Try: <what the user tries at the end; at Show, the user's own steps, split by ;>
 Adjust: <only after an adjust: the user's notes, dated; never in Try>

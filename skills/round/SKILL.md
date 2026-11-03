@@ -42,6 +42,7 @@ Base's `log.md` already lists that branch as `dropped`? Finish the drop: delete 
 Otherwise check it out, and find the round whose Branch names it:
 
 - No such round — Step 1 stopped early. Finish its log commit.
+- `picking` — Step 1, after the pick. Restate the round, then ask and plan.
 - `building` — Step 2. Diff the branch to see what is done.
 - `checking` — Step 3.
 - `showing` — Step 4.
@@ -51,9 +52,9 @@ Otherwise check it out, and find the round whose Branch names it:
 
 Read `brief.md`, `log.md`, and `bug.md`.
 
-`bug.md`'s Loose holds at most 5 bugs. At 6 or more, this round is a bug round. Offer no other pick. A round the user named runs after it.
+`bug.md`'s Loose has 6 or more bugs? Recommend a bug round. It is only a suggestion. The user's own pick always wins.
 
-For that bug round, tidy `bug.md` first:
+A bug round tidies `bug.md` first:
 
 - Merge repeats.
 - Find bugs that later rounds already fixed.
@@ -62,7 +63,7 @@ For that bug round, tidy `bug.md` first:
 
 Commit a new `bug.md` and the tidy on the base branch, before the round's branch exists.
 
-Otherwise, a user who named the round has picked it. Or show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
+A user who named the round has picked it. Or show Next and `bug.md` with your recommended pick. Wait for the user's choice before planning.
 
 A pick is one of:
 
@@ -73,7 +74,17 @@ A bug round fixes bugs by impact times visibility, highest first. Impact is how 
 
 Recommend by what the round needs. Pick what most reduces doubt, or what the user wants to see.
 
-Once the round is picked, restate it in chat. Name its idea, its goals, and what it builds. Name the blocks and connections it adds or changes, per `brief.md`'s Building blocks.
+Once the round is picked, record it at once, so the docs show it:
+
+- Create the branch, per `../../loop.md`'s Git section.
+- Add the round to Rounds, with status `picking`.
+- Remove its feature from Next, and renumber Next.
+- Move its bugs from `bug.md` to its Bugs line.
+- Commit.
+
+The user drops or swaps the pick before approving the plan? Drop the round, per Step 4's Drop.
+
+Then restate the round in chat. Name its idea, its goals, and what it builds. Name the blocks and connections it adds or changes, per `brief.md`'s Building blocks.
 
 Ask every open question in chat first, per `../../loop.md`'s Asking section. Wait for the answers.
 
@@ -83,9 +94,9 @@ Enter plan mode. Write a short plan.
 
 Exit plan mode. This is the round's approval.
 
-Create the branch, per `../../loop.md`'s Git section. Add the round to Rounds, with status `building`. Remove its feature from Next, and renumber Next. Move its bugs from `bug.md` to its Bugs line. Commit.
+Fill the round's Try and Risk lines. Set status `building`. Commit.
 
-Gate: the user picked the round and approved the plan. The round is in `log.md`. Its items are gone from Next and `bug.md`.
+Gate: the user picked the round and approved the plan. The round is in `log.md`, with status `building`. Its items are gone from Next and `bug.md`.
 
 ## Step 2 — Build
 
