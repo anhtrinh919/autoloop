@@ -108,6 +108,7 @@ Do not invent product limitations. Write a limit only when the user stated it or
 ## Asking
 
 Ask only decisions the user would notice. Decide plumbing yourself.
+Read requests for intent and common sense, not letter; when the user is unsure, propose options with your pick and why.
 
 Number each question, with your recommended answer:
 
