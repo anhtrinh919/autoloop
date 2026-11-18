@@ -90,6 +90,8 @@ Ask every open question in chat first, per `../../loop.md`'s Asking section. Wai
 
 The plan holds no questions. It states each answer as a settled choice. A question found while planning goes to chat, before the plan is shown.
 
+A screen with a design file is built to its whole look. Moving any part to a later round needs the user's yes.
+
 Enter plan mode. Write a short plan.
 
 Exit plan mode. This is the round's approval.
@@ -107,6 +109,11 @@ Code with logic is built test-first:
 - Compute expected values on your own, never from the code under test.
 
 Screens are proven by walking them, in Step 3. Mark any sample data as sample data in the code.
+
+A screen with a design file is built from that file:
+
+- Read each size, font, colour, gap, and icon from the file itself. Never copy by eye.
+- Use the file's own images, such as faces and icons. Never draw a stand-in.
 
 Agent pieces are built from instructions and tools:
 
@@ -139,6 +146,7 @@ Look at every screen yourself, in screenshots:
 - Take them as the user sees them: the user's own window size, theme, and real data.
 - Open each screenshot. Screen text or a passing check never counts as a look.
 - Judge it as the user. Note what the eye meets first, and what is empty, cut, or unclear.
+- A screen with a design file — screenshot the design at the same size. Compare them side by side. Any difference the user would see is a failure.
 - Fix what fails that look, as any other failure.
 
 Scale the blind checks to the round:
@@ -151,7 +159,7 @@ Fix every failure inside the round's goal. Sort every other bug per Rules. Move 
 
 Rerun only what each fix touches. Never loop the agent to polish one answer.
 
-Gate: zero tests fail. The real run reached the round's goal. You looked at every screen's screenshots. Zero findings inside the goal remain open. Every bug Rules says to fix now is fixed.
+Gate: zero tests fail. The real run reached the round's goal. You looked at every screen's screenshots, beside its design where one exists. Zero findings inside the goal remain open. Every bug Rules says to fix now is fixed.
 
 ## Step 4 — Show
 
